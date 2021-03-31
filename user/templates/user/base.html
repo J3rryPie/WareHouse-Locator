@@ -1,0 +1,27 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      {%if user.is_authenticated%}
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900" href="{%url 'logout'%}"">Logout</a>
+        {%else%}
+        <a class="mr-5 hover:text-gray-900" href="{%url 'about-us'%}"">About us</a>
+        <a class="mr-5 hover:text-gray-900" href="{%url 'about-project'%}"">About this project</a>
+      </nav>
+      {%endif%}
+    </div>
+</header>
+<body>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

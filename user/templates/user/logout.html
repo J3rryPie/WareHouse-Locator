@@ -1,0 +1,13 @@
+{%extends 'user/base.html'%}
+{% block content %}
+
+<h2>You have been logged out successfully.</h2>
+      <div class="text-grey-dark mt-6">
+                <a class="text-blue-500" href="{%url 'login'%}">
+                    Login Again
+                </a>
+       </div>
+            <p class="text-center text-gray-500 text-xs">
+                &copy;2020 Live Tracker Corp. All rights reserved.
+            </p>
+{%endblock content%}
