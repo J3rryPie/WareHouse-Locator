@@ -1,5 +1,5 @@
 from django.urls import path,include
-from . import views as user_views,input_view,output_view,all_cities_view
+from . import views as user_views
 from django.contrib.auth import views as auth_views
 
 
@@ -10,7 +10,7 @@ urlpatterns = [
     path('project/',user_views.project,name='about-project'),
     path('login/',auth_views.LoginView.as_view(template_name='user/login.html'),name='login'),
     path('logout/',auth_views.LogoutView.as_view(template_name='user/logout.html'),name='logout'),
-    path('cities/',all_cities_view,name='all_cities')
-    path('input/',input_view)
-    path('output/',output_view)
+    path('cities/',user_views.all_cities_view,name='all_cities'),
+    path('input/',user_views.input_view),
+    # path('output/',output_view),
 ]

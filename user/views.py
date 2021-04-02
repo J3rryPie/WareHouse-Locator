@@ -2,7 +2,8 @@ from django.shortcuts import render,redirect
 from .forms import UserRegisterForm
 from .forms import City_Choice_Form
 from .models import City
-from math import pow
+import math
+
 # from .models import City_Dist
 from django.shortcuts import get_object_or_404
 # Create your views here.
@@ -37,22 +38,23 @@ def project(request):
 #     return render(request,"user\output.html",{}) 
 
 def all_cities_view(request):
-    if request.user.is_authenticated():
-        obj=City.object.all()
+    if request.user.is_authenticated:
+        obj=City.objects.all()
         context = {
         "City_List": obj
         }
-        return (request,"user/cities.html",context)
+        return render(request,"user/cities.html",context)
 
 def input_view(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         if request.method == 'POST':
             client_cities=City_Choice_Form(request.POST)
             if client_cities.is_valid():
                 c = client_cities.cleaned_data.get("citi")
                 cnt_citi=len(c)
                 # c_d=City_Dist.objects.all()                
-                weights [[0 for i in range(cnt_citi)] for j in range(cnt_citi)]]
+                weights=[[0 for i in range(cnt_citi)] for j in range(cnt_citi)]
+                # [[0 for i in range(cols)] for j in range(rows)]
                 axl=[]
                 ayl=[]
                 for i in c:
@@ -64,21 +66,24 @@ def input_view(request):
                 #now create the adj matrix
                 for i in range(cnt_citi):
                     for j in range(cnt_citi):
-                        weights[i][j]=math.sqrt(math.pow((axl[i]-axl[j]),2)+math.pow((ayl[i]-ayl[j]),2))                   
+                        weights[i][j]=math.sqrt(pow((axl[i]-axl[j]),2)+pow((ayl[i]-ayl[j]),2))                   
                 
+                return render(request,'user/input.html')
         else:
             # context={}
+            form= City_Choice_Form()
             context={
                 "name":request.user,
                 'city_names':[],
+                'form':form,
             }
             form = City_Choice_Form(request.POST or None)
             if form.is_valid():
                 form.save()
                 citi=form.cleaned_data.get(citi)
-                context['city_names']= citi
+                # context['city_names']= citi
             return render(request, "user/input.html", context)
     else:
-        return render(request,"user/home.html",context)
+        return redirect('user-home')
 
 
