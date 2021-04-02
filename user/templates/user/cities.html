@@ -1,0 +1,9 @@
+{%extends 'user/base.html'%}
+{% block content %}
+<h2> List of All Cities </h2>
+<ul>
+{% for city in City_List %}
+    <li>{{forloop.counter}}-{{ city }}</li>
+{% endfor %}
+</ul>
+{%endblock content%}

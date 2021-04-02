@@ -1,0 +1,12 @@
+{%extends 'user/base.html'%}
+{% block content %}
+<h1>Welcome {{ name }}</h1>
+<h4>Use this page to tell us which cities are your factories located and how many warehouses do you want !</h4>
+<h4>Choose The Cities you have Stores In</h4>
+
+<form action="." method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Select" />
+</form>
+
+{%endblock content%}
