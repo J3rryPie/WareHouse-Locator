@@ -59,7 +59,8 @@ ROOT_URLCONF = 'kCenter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"templates\user")],
+        # 'DIRS': [os.path.join(BASE_DIR,"templates\user")],
+        'DIRS':[],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,5 +135,5 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
 CRISPY_TEMPLATE_PACK = "tailwind"
 
-LOGIN_REDIRECT_URL='user-home'
+LOGIN_REDIRECT_URL='all_cities'
 

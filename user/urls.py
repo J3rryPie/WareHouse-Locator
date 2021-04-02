@@ -10,7 +10,7 @@ urlpatterns = [
     path('project/',user_views.project,name='about-project'),
     path('login/',auth_views.LoginView.as_view(template_name='user/login.html'),name='login'),
     path('logout/',auth_views.LogoutView.as_view(template_name='user/logout.html'),name='logout'),
-    path(r'^cities/',all_cities_view)
-    path(r'^input/',input_view)
-    path(r'^output/',output_view)
+    path('cities/',all_cities_view,name='all_cities')
+    path('input/',input_view)
+    path('output/',output_view)
 ]

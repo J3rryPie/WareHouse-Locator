@@ -3,7 +3,7 @@
 <h2> List of All Cities </h2>
 <ul>
 {% for city in City_List %}
-    <li>{{forloop.counter}}-{{ city }}</li>
+    <li>{{forloop.counter}}-{{ city.name }}</li>
 {% endfor %}
 </ul>
 {%endblock content%}

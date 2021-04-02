@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import UserRegisterForm
 from .forms import City_Choice_Form
 from .models import City
+from math import pow
 # from .models import City_Dist
 from django.shortcuts import get_object_or_404
 # Create your views here.
@@ -41,7 +42,7 @@ def all_cities_view(request):
         context = {
         "City_List": obj
         }
-        return (request,"user\cities.html",context)
+        return (request,"user/cities.html",context)
 
 def input_view(request):
     if request.user.is_authenticated():
@@ -49,8 +50,9 @@ def input_view(request):
             client_cities=City_Choice_Form(request.POST)
             if client_cities.is_valid():
                 c = client_cities.cleaned_data.get("citi")
+                cnt_citi=len(c)
                 # c_d=City_Dist.objects.all()                
-                weights ={}
+                weights [[0 for i in range(cnt_citi)] for j in range(cnt_citi)]]
                 axl=[]
                 ayl=[]
                 for i in c:
@@ -60,19 +62,23 @@ def input_view(request):
                    axl.append(ax)
                    ayl.append(ay)
                 #now create the adj matrix
-                
-                    
+                for i in range(cnt_citi):
+                    for j in range(cnt_citi):
+                        weights[i][j]=math.sqrt(math.pow((axl[i]-axl[j]),2)+math.pow((ayl[i]-ayl[j]),2))                   
                 
         else:
-            context={}
+            # context={}
             context={
                 "name":request.user,
+                'city_names':[],
             }
             form = City_Choice_Form(request.POST or None)
             if form.is_valid():
                 form.save()
-            context['form']= form
-            return render(request, "user\input.html", context)
+                citi=form.cleaned_data.get(citi)
+                context['city_names']= citi
+            return render(request, "user/input.html", context)
     else:
-        return render(request,"home.html",context)
+        return render(request,"user/home.html",context)
+
 
