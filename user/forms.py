@@ -36,3 +36,4 @@ class City_Choice_Form(forms.Form):
             required=True,
             label='city',
         )
+    k = forms.IntegerField(initial=1)

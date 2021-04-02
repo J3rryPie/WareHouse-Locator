@@ -1,4 +1,10 @@
 {%extends 'user/base.html'%}
 {% block content %}
-
-{%endblock content %}
+<h4>The maximum distance of a city to a center is {{ max_dist }} </h4>
+<h4>The Cities Where Warehouses Should be Are :</h4>
+<ul>
+{% for warehouse in warehouse_list %}
+    <li>{{forloop.counter}}-{{ warehouse }}</li>
+{% endfor %}
+</ul>
+{%endblock content%}
