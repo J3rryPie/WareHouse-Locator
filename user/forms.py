@@ -32,7 +32,8 @@ class City_Choice_Form(forms.Form):
     citi = forms.MultipleChoiceField(
             choices=OPTIONS,
             initial='0',
-            widget=forms.SelectMultiple(),
+            # widget=forms.SelectMultiple(),
+            widget=forms.CheckboxSelectMultiple,
             required=True,
             label='city',
         )

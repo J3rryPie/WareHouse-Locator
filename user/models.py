@@ -6,6 +6,9 @@ class City(models.Model):
     name=models.CharField(max_length=30,default='India')
     store=models.BooleanField()
     warehouse=models.BooleanField()
+    
+    def __str__(self):
+        return self.name
     # City_Choices=[
     #     (1,'Mumbai'),
     #     (2,'Pune'),

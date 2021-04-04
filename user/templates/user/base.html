@@ -1,14 +1,48 @@
 {%load static%}
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" class="grey lighten-1">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mini-Project</title>
+
+  <!-- CSS  -->
+  
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css\style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Document</title> -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<!-- <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<header class="text-gray-600 body-font">
+</head> -->
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo center">Warehouse Locator</a>
+    <ul class="left hide-on-med-and-down">
+      <li><a href="{% url 'all_cities' %}">Cities</a></li>
+      <li><a href="{% url 'input' %}">Input Here</a></li>
+      <li class="active"><a href="{% url 'logout'}">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       {%if user.is_authenticated%}
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
@@ -19,7 +53,7 @@
       </nav>
       {%endif%}
     </div>
-</header>
+</header> -->
 <body>
     {% block content %}
     {% endblock content %}

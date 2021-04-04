@@ -1,6 +1,19 @@
-{%extends 'user/base.html'%}
-{% block content %}
-<h1>Welcome {{ name }}</h1>
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" class="grey lighten-1">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{%static '/css/input.css'%}">
+
+
+</head>
+<body>
+  
+
+  <h1>Welcome {{ name }}</h1>
 <h4>Use this page to tell us which cities are your factories located and how many warehouses do you want !</h4>
 <h4>Choose The Cities you have Stores In</h4>
 
@@ -11,4 +24,10 @@
     <button type="submit">Submit your choice</button>
 </form>
 
-{%endblock content%}
+  
+</body>
+</html>
+
+
+
+

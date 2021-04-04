@@ -82,7 +82,7 @@ def input_view(request):
                     centers.append(max)
                     for j in range(cnt_citi):
                         dist[j] = min(dist[j], weights[max][j])
-                    max = maxindex(dist, cnt_citi)
+                    # max = maxindex(dist, cnt_citi)
                     max = 0
                     for p in range(cnt_citi):
                         if (dist[p] > dist[max]):
@@ -92,7 +92,7 @@ def input_view(request):
                 warehouse_list=[]
                 context['max_dist']=dist[max]
                 for i in centers:
-                    warehouse_list.append(City.objects.get(id=i))
+                    warehouse_list.append(City.objects.get(id=i+1))
                 context['warehouse_list']=warehouse_list
                     # print(i, end = " ")
 
