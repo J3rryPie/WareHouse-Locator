@@ -44,6 +44,6 @@ class City_Choice_Form(forms.Form):
             # widget=forms.SelectMultiple(),
             widget=forms.CheckboxSelectMultiple,
             required=True,
-            label='city',
+            label='City Choices',
         )
     k = forms.IntegerField(initial=1)

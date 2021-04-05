@@ -3,7 +3,6 @@ from .forms import UserRegisterForm
 from .forms import City_Choice_Form
 from .models import City
 import math
-# from .models import City_Dist
 from django.shortcuts import get_object_or_404
 # Create your views here.
 def home(request):
@@ -24,18 +23,6 @@ def about(request):
 
 def project(request):
     return render(request,'user/project.html')
-
-# def input_view(request,*args,**kwargst):
-#     cities=
-#     if request.user.is_authenticated():
-#         context={
-#             "name": request.user,
-#             "all_cities"=['Mumbai','Pune','Nashik','Nagpur','Thane','Dapoli','Alibaugh']
-#         }
-#     return render(request,"user/input.html",context) 
-# def output_view(request,*args,**kwargst):
-#     return render(request,"user\output.html",{}) 
-
 def all_cities_view(request):
     if request.user.is_authenticated:
         obj=City.objects.all()
@@ -52,9 +39,7 @@ def input_view(request):
                 n = client_cities.cleaned_data.get("citi")
                 k=client_cities.cleaned_data.get('k')
                 cnt_citi=len(n)
-                # c_d=City_Dist.objects.all()                
                 weights=[[0 for i in range(cnt_citi)] for j in range(cnt_citi)]
-                # [[0 for i in range(cols)] for j in range(rows)]
                 axl=[]
                 ayl=[]
                 print(n)
@@ -74,7 +59,6 @@ def input_view(request):
             
                 for i in range(cnt_citi):
                     dist[i] = 10**9
-                # print(weights)    
                 # index of city having the
                 # maximum distance to it's
                 # closest center
@@ -115,9 +99,6 @@ def input_view(request):
             form = City_Choice_Form(request.POST or None)
             if form.is_valid():
                 form.save()
-                # citi=form.cleaned_data.get(citi)
-                # k=form.cleaned_data.get(k)
-                # context['city_names']= citi
             return render(request, "user/input.html", context)
     else:
         return redirect('user-home')

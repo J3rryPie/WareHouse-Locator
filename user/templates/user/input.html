@@ -7,16 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="{%static '/css/input.css'%}">
-
-
 </head>
 <body>
   
 
   <h1>Welcome {{ name }}</h1>
 <h4>Use this page to tell us which cities are your factories located and how many warehouses do you want !</h4>
-<h4>Choose The Cities you have Stores In</h4>
-
+<h4> Choose cities where your store is located !</h4>
+<h4>Also mention number of WareHouses that you want to place and we will provide you with most efficient place to construct them !!</h4>
 <form action="." method="post">
     {% csrf_token %}
     {{ form.as_p }}
