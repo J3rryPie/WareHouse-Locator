@@ -1,8 +1,8 @@
 from django.db import models
 
 class City(models.Model):
-    x_coordinate = models.DecimalField(max_digits=6,decimal_places=3)
-    y_coordinate = models.DecimalField(max_digits=6,decimal_places=3)
+    x_coordinate = models.DecimalField(max_digits=6,decimal_places=3,default=0.0)
+    y_coordinate = models.DecimalField(max_digits=6,decimal_places=3,default=0.0)
     name=models.CharField(max_length=30,default='India')
     store=models.BooleanField()
     warehouse=models.BooleanField()

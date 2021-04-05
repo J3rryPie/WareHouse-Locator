@@ -3,7 +3,6 @@ from .forms import UserRegisterForm
 from .forms import City_Choice_Form
 from .models import City
 import math
-
 # from .models import City_Dist
 from django.shortcuts import get_object_or_404
 # Create your views here.
@@ -58,12 +57,14 @@ def input_view(request):
                 # [[0 for i in range(cols)] for j in range(rows)]
                 axl=[]
                 ayl=[]
+                print(n)
                 for i in n:
                    a=City.objects.get(id=i)
                    ax=a.x_coordinate
                    ay=a.y_coordinate
                    axl.append(ax)
                    ayl.append(ay)
+                print(axl)
                 #now create the adj matrix
                 for i in range(cnt_citi):
                     for j in range(cnt_citi):
@@ -93,6 +94,7 @@ def input_view(request):
                 context['max_dist']=dist[max]
                 for i in centers:
                     warehouse_list.append(City.objects.get(id=i+1))
+                    print(warehouse_list)
                 context['warehouse_list']=warehouse_list
                     # print(i, end = " ")
 

@@ -27,6 +27,15 @@ class City_Choice_Form(forms.Form):
         ('4','Nagpur'),
         ('5','Thane'),
         ('6','Alibaugh'),
+        ('7','Kolhapur'),
+        ('8','Solapur'),
+        ('9','Latur'),
+        ('10','Nanded'),
+        ('11','Lucknow'),
+        ('12','Chennai'),
+        ('13','Kolkata'),
+        ('14','Banglore'),
+        ('15','Delhi'),
         ]
 
     citi = forms.MultipleChoiceField(
