@@ -74,11 +74,13 @@ def input_view(request):
             
                 for i in range(cnt_citi):
                     dist[i] = 10**9
-                    
+                # print(weights)    
                 # index of city having the
                 # maximum distance to it's
                 # closest center
-                max = 0
+                max = int(n[0])
+                # max=0
+                print(max)
                 for i in range(k):
                     centers.append(max)
                     for j in range(cnt_citi):
@@ -92,8 +94,11 @@ def input_view(request):
                 context={}
                 warehouse_list=[]
                 context['max_dist']=dist[max]
-                for i in centers:
-                    warehouse_list.append(City.objects.get(id=i+1))
+                print(centers)
+                # print(n[centers])
+                for i in centers:        
+                    # warehouse_list.append(n[i])
+                    warehouse_list.append(City.objects.get(id=n[i]))
                     print(warehouse_list)
                 context['warehouse_list']=warehouse_list
                     # print(i, end = " ")
