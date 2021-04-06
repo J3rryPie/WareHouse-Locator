@@ -44,9 +44,9 @@ All City Options:
 ![alt_text](https://github.com/J3rryPie/WareHouse-Locator/blob/master/MiniProject_SS/All_Cities.jpeg)
 
 Input From User:
-[!alt_text](https://github.com/J3rryPie/WareHouse-Locator/blob/master/MiniProject_SS/Input.jpeg)
+[!input_screenshot](https://github.com/J3rryPie/WareHouse-Locator/blob/master/MiniProject_SS/Input.jpeg)
 
 Output:
-[!alt_text](https://github.com/J3rryPie/WareHouse-Locator/blob/master/MiniProject_SS/Output.jpeg)
+[!output_screenshot](https://github.com/J3rryPie/WareHouse-Locator/blob/master/MiniProject_SS/Output.jpeg)
 
  
