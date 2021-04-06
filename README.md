@@ -32,4 +32,21 @@ About our project:
 Furthur Scope:
   Integrate it with Google Maps for more choices of ciies and better essimation of coordinates.
   Using  Euclidean distance to calculate distance between cities(Considering Earth as a sphere rather than a plane surface)
+  
+ScreenShots:
+Django Admin App:
+![alt text](https://github.com/J3rryPie/WareHouse-Locator/blob/master/MiniProject_SS/Admin_App.jpeg)
+
+SignUp Page:
+![alt text](https://github.com/J3rryPie/WareHouse-Locator/blob/master/MiniProject_SS/SignUp.jpeg)
+
+All City Options:
+![alt_text](https://github.com/J3rryPie/WareHouse-Locator/blob/master/MiniProject_SS/All_Cities.jpeg)
+
+Input From User:
+[!alt_text](https://github.com/J3rryPie/WareHouse-Locator/blob/master/MiniProject_SS/Input.jpeg)
+
+Output:
+[!alt_text](https://github.com/J3rryPie/WareHouse-Locator/blob/master/MiniProject_SS/Output.jpeg)
+
  
