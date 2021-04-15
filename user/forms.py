@@ -26,7 +26,7 @@ class City_Choice_Form(forms.Form):
         ('3','Nashik'),
         ('4','Nagpur'),
         ('5','Thane'),
-        ('6','Alibaugh'),
+        ('6','Alibaug'),
         ('7','Kolhapur'),
         ('8','Solapur'),
         ('9','Latur'),
