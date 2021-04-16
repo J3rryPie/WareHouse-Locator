@@ -43,9 +43,10 @@ portalocker==2.3.0
 psycopg2==2.8.6
 psycopg2-binary==2.8.6
 pygame==2.0.1
-pypiwin32==223
+
 python-decouple==3.4
 pytz==2020.5
+
 requests==2.25.1
 six==1.15.0
 soupsieve==2.2.1
