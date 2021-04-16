@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import environ
+import django_heroku
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
@@ -145,4 +146,6 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
 
 LOGIN_REDIRECT_URL='all_cities'
+
+django_heroku.settings(locals())
 
